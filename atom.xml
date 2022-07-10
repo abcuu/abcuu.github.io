@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://www.dddy.eu.org</id>
+    <title>点点的雨</title>
+    <updated>2022-07-10T12:43:29.980Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://www.dddy.eu.org"/>
+    <link rel="self" href="https://www.dddy.eu.org/atom.xml"/>
+    <subtitle>www.dddy.eu.org</subtitle>
+    <logo>https://www.dddy.eu.org/images/avatar.png</logo>
+    <icon>https://www.dddy.eu.org/favicon.ico</icon>
+    <rights>All rights reserved 2022, 点点的雨</rights>
+    <entry>
+        <title type="html"><![CDATA[（系统安装系列5）用微PE工具箱安装GHOST系统的方法以及安装失败的解决方法]]></title>
+        <id>https://www.dddy.eu.org/post/5/</id>
+        <link href="https://www.dddy.eu.org/post/5/">
+        </link>
+        <updated>2022-07-05T11:32:27.000Z</updated>
+        <content type="html"><![CDATA[<p>ghost系统是由原版系统封装之后得来的，是为了批量维护电脑而发明的一种技术，目的是为了减少不必要的重复劳动，ghost系统里面一般都提前更新了补丁，集成了驱动安装包，安装了必要的运行库和软件，提前对系统做了相应的优化设置，安装过程完全自动，不像安装原版系统那样还需要手动选择，用ghost系统能够提高计算机维护的效率。</p>
+<p>1、 首先开机进入U盘里的微PE系统。打开（CGI备份还原）。不同的PE里面的工具名称不一样，一般的PE工具里都会有一个类似这种功能的软件，这里是用微PE工具箱做的演示。<br>
+<img src="https://www.dddy.eu.org/post-images/1657020790856.jpg" alt="" loading="lazy"><br>
+2、安装ghost系统其实就是还原系统，选择还原分区。下面选择系统盘，一般都是C盘，不过有的时候PE里盘符不一定对，最好根据大小选择。再下面选择映像文件，一般格式有gho、wim、esd等，可以是放到U盘里的也可以是放到C盘以外的电脑硬盘里的。然后点击（执行）。<br>
+<img src="https://www.dddy.eu.org/post-images/1657020817077.jpg" alt="" loading="lazy"><br>
+3、下一步，可以什么都不选，等系统还原完手动重启或关机，也可以根据需要选择，如果U盘是第一启动顺序，就选择关机，关机之后拔掉U盘再开机就直接从硬盘启动了，就不用总是盯着电脑要在重启的一瞬间拔掉U盘了。如果硬盘是第一启动顺序，可以选择重启，还原完系统后就什么都不用管了，拔不拔U盘都无所谓，不过最好是拔掉，防止系统部署的时候有错误的硬件识别。<br>
+<img src="https://www.dddy.eu.org/post-images/1657020865478.jpg" alt="" loading="lazy"><br>
+4、之后就等待系统还原完成，重启或再次开机后会自动部署系统。<br>
+<img src="https://www.dddy.eu.org/post-images/1657020884237.jpg" alt="" loading="lazy"><br>
+5、用ghost系统有的时候安装完却进不去系统，一般都是由引导文件错误引起的，安装原版系统一般不会出现这个问题。常见于UEFI引导的电脑，因为GPT硬盘的引导文件并不是放在系统盘（C盘）里，传统引导（Legacy）MBR硬盘如果出现这个情况一般是因为封装ghost系统时没有把引导文件一起封装进去。</p>
+<p>解决方法就是重建引导，如果系统安装完却进不去就再次进入U盘PE，找到修复引导的工具。<br>
+<img src="https://www.dddy.eu.org/post-images/1657020908585.jpg" alt="" loading="lazy"><br>
+根据实际情况选择，传统BIOS+MBR硬盘就选Legacy，UEFI+GPT硬盘就选UEFI，一般软件都会自动判断的，修复完成之后再重启一般就没问题了。<br>
+<img src="https://www.dddy.eu.org/post-images/1657020930203.jpg" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[（系统安装系列4）用U盘PE安装WINDOWS原版系统的方法和硬件驱动的安装方法]]></title>
+        <id>https://www.dddy.eu.org/post/4/</id>
+        <link href="https://www.dddy.eu.org/post/4/">
+        </link>
+        <updated>2022-07-05T11:25:19.000Z</updated>
+        <content type="html"><![CDATA[<p>1、系统的安装，要提前把下载好的原版系统放到U盘里，建议放到根目录，减少出错的可能。进电脑BIOS，把U盘设置成第一启动顺序，或开机按选择启动盘的快捷键选择U盘，开机进入U盘里的PE系统，找到放在U盘里的原版系统，点鼠标右键，选择“装载”后就可以看到下面这些文件，双击exe开始安装系统。<br>
+<img src="https://www.dddy.eu.org/post-images/1657020363270.jpg" alt="" loading="lazy"><br>
+<img src="https://www.dddy.eu.org/post-images/1657020369176.jpg" alt="" loading="lazy"><br>
+这里演示的是Win7系统，Win10基本也类似，安装过程一般的选项按照提示即可，到了选择安装位置时一定要注意一下，要选择“自定义”选项。<br>
+<img src="https://www.dddy.eu.org/post-images/1657020401204.jpg" alt="" loading="lazy"><br>
+<img src="https://www.dddy.eu.org/post-images/1657020408059.jpg" alt="" loading="lazy"><br>
+<img src="https://www.dddy.eu.org/post-images/1657020415652.jpg" alt="" loading="lazy"><br>
+之后根据硬盘分区时候的不同盘的大小选择C盘，也就是主分区的那个盘。如果之前硬盘没有分区也可以在这里进行分区，选择“驱动器选项（高级）”，不过在这里分区如果是MBR会多出一个100M的空间，这个不用管，装完系统后并不会显示。<br>
+<img src="https://www.dddy.eu.org/post-images/1657020441137.jpg" alt="" loading="lazy"><br>
+之后等待安装完成即可，期间会自动重启，最好在第一次重启黑屏的那一瞬间迅速的拔掉U盘，否则重启之后还会进入PE系统，正常的系统安装就不能继续了。如果没有及时拔掉U盘也不用着急，重启再次进入了PE，那就在PE里面关机，然后拔掉U盘再开机，系统就会继续安装了。<br>
+<img src="https://www.dddy.eu.org/post-images/1657020466373.jpg" alt="" loading="lazy"><br>
+最后设置用户名那里可以随便填，最好是英文字母，安装完成之后桌面上只有一个回收站的图标就对了，说明就是原版的系统。</p>
+<p>安装完之后鼠标在桌面上右键-个性化-更改桌面图标，可以把其它的常用桌面图标调出来。</p>
+<p>经验总结：我个人装系统的时候是把BIOS里的启动顺序设置为硬盘为第一启动，USB设置为第二启动，然后进PE的时候用的是用选择启动项的快捷键，再选择U盘启动，这样系统安装过程中自动重启就不用拔U盘了，重启之后就自动从硬盘启动了，不用总是一直盯着。</p>
+<p>注意：原版的Win7系统里是没有USB3.0和NVMe协议固态硬盘补丁的，没有补丁即使有驱动也打不上的，带有USB3.0接口的电脑要装Win7最简单的办法还是找一个集成补丁和驱动的ghost系统比较好。</p>
+<p>2、驱动的安装，原版系统里自带的驱动比较少，一般只能够保证电脑的正常开机，安装完系统首先就要把所有驱动程序安装或更新一遍。</p>
+<p>安装驱动最好的方法就是根据自己电脑的品牌或是各个硬件的品牌去官网下载，这样安装的驱动最干净，不会一不小心安装了其它不需要的软件或更改了浏览器的主页，不过就是太麻烦了。</p>
+<p>还可以用驱动精灵、驱动人生等在线安装和更新驱动的工具，大部分工具都有万能网卡版，即使刚装完的系统不能联网也可以用。</p>
+<p>如果电脑没有联网的环境，可以用IT天空的万能驱动助理或系统总裁的驱动总裁等离线驱动安装工具，但是由于集成的驱动比较多，安装包比较大。</p>
+<p>使用工具安装最大的缺点就是如果不够小心非常有可能默认安装一些不需要的软件或是更改了浏览器主页，甚至有些还会锁定主页，正常途径根本改不了。</p>
+<p>3、到此Windows原版系统的安装算是完成了。</p>
+<p>关于系统激活与正版、盗版的一些说明，原版系统安装完是没有激活的，如果需要激活系统建议通过正规渠道购买正版密钥，其实不管是安装的原版还是ghost版只要是通过正规渠道购买秘钥激活那就是正版，用一些购物平台买的几块钱的秘钥或是使用激活工具其实都是盗版，没有激活的系统大部分功能也可以用，激活工具最好不要乱用，其实有些工具本来是好的，但是有的被人改过之后又放到了网上，这样的工具除了会激活系统之外还会默默的干一些其他的事情，最后还是建议支持正版。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[（系统安装系列3）用PE系统U盘给硬盘分区的方法]]></title>
+        <id>https://www.dddy.eu.org/post/3/</id>
+        <link href="https://www.dddy.eu.org/post/3/">
+        </link>
+        <updated>2022-07-05T11:17:24.000Z</updated>
+        <content type="html"><![CDATA[<p>这里介绍一下电脑不同启动模式下给硬盘分区的方法，传统BIOS（Legacy）和UEFI模式启动时给硬盘分区的区别和注意事项。</p>
+<p>1、对硬盘进行分区针可以有效的防止重装系统之后重要文件丢失的情况出现，可以不同的盘放不同的文档，方便文档的管理，当然如果电脑有两块以上的硬盘，其中一块盘只装系统和软件也可以不分区的。</p>
+<p>如果是新组装的电脑分区之前首先要进BIOS看一下或更改一下电脑的启动模式（笔记本和品牌机一般都自带系统，这种情况需要进系统之后在系统里进行分区，本篇文章说的是在U盘PE里给硬盘分区）。开机马上连续不停的按相应的快捷键即可进入BIOS，不同品牌电脑和主板的快捷键不一样，一般都是F1到F12、Esc、Del其中的一个键，有的笔记本可能要配合Fn键，有的开机的时候在屏幕上会显示一两秒的提示，有的一点也不显示。需要根据自己电脑的品牌或主板的品牌去搜索一下（例如可以搜XX主板进BIOS快捷键）。</p>
+<p>进入BIOS之后看一下启动模式是UEFI还是传统BIOS（Legacy），是否开启了CSM，现在新电脑一般默认开启的是UEFI模式引导，太老的电脑里根本没有UEFI的选项，那就是传统BIOS。</p>
+<p>UEFI启动对应的硬盘分区表类型为GPT（GUID）。</p>
+<p>UEFI+Legacy就是兼容模式，对应的硬盘分区表类型可以是GPT也可以是MBR。</p>
+<p>开启CSM就是开启兼容模式，可以是GPT也可以是MBR。开启兼容模式需要关闭安全启动（Secure Boot）。</p>
+<p>老电脑里根本找不到UEFI的选项，那就是传统BIOS（Legacy）对应MBR。</p>
+<p>不同品牌主板BIOS里这几个选项的位置都不一样，总之要找到这几个关键字母就行了。</p>
+<p>例如微星的主板是按Del进入BIOS<br>
+<img src="https://www.dddy.eu.org/post-images/1657019939156.jpg" alt="" loading="lazy"><br>
+<img src="https://www.dddy.eu.org/post-images/1657019946358.jpg" alt="" loading="lazy"><br>
+如何选择：</p>
+<p>如果装系统的整个硬盘小于等于2T可以任意选择，如果大于2T需要选择UEFI+GPT的方式，因为MBR分区表最多只能支持2T多一点。</p>
+<p>如果装Win10系统选哪个方式都可以。</p>
+<p>如果装Win7系统建议选择兼容模式+MBR的方式。用UEFI+GPT也可以，但是太麻烦了。</p>
+<p>目前绝大多数主板UEFI启动只支持64位的系统。</p>
+<p>2、把PE系统启动U盘插在电脑上，台式机一般插在机箱后面的插口，可以减少出错的几率。进入U盘里的PE系统有两种方法，一种方法是进BIOS设置U盘为第一启动项，一般是USB HDD或USB HARD DISK，设置好按F10保存之后重启自动进入U盘里的PE系统。第二种方法是开机时不停的按选择启动盘的热键，这个快捷键也是不同品牌的电脑或主板都不一样，需要根据自己电脑或主板的品牌搜索一下（例如XX主板U盘启动热键）。</p>
+<p>例如微星主板是开机按F11进入选择启动盘的界面，下图第一个是硬盘启动，第二个和第三个都是UEFI模式启动的金士顿的U盘，不同品牌的U盘显示的不一样，实测第二个不能启动，第三个可以顺利进入PE。一般PE工具制作的启动U盘里都至少有两个以上的PE版本，如果不是太老的电脑就选Win10PE就可以了，防止不能识别一些硬件。<br>
+<img src="https://www.dddy.eu.org/post-images/1657019970500.jpg" alt="" loading="lazy"><br>
+3、进入PE之后就要给硬盘分区了，一般PE系统里都有一个 DiskGenius 硬盘分区工具，打开此工具首先检查一下硬盘分区格式是MBR还是GPT，如果电脑是传统BIOS启动则对应MBR，如果是UEFI启动则对应GPT，下图是在虚拟机里演示的，就选了默认的MBR。<br>
+<img src="https://www.dddy.eu.org/post-images/1657020002882.jpg" alt="" loading="lazy"><br>
+如果电脑是UEFI启动的就要改一下，右键左边硬盘那里，选择“转换分区类型为GUID格式”。<br>
+<img src="https://www.dddy.eu.org/post-images/1657020030551.jpg" alt="" loading="lazy"><br>
+然后选择“快速分区”，根据硬盘大小和需要来分就可以了，如果是固态硬盘一定要4K对齐，勾选“对齐分区到此扇区数的整数倍”，默认的就可以。<br>
+<img src="https://www.dddy.eu.org/post-images/1657020060628.jpg" alt="" loading="lazy"><br>
+GPT（GUID）分区一定要创建ESP分区，大小默认即可，ESP分区是用来放系统引导文件的，MSR分区虽然目前没什么用，但是还是一起创建比较好。保留空闲扇区那里可选也可以不选。<br>
+<img src="https://www.dddy.eu.org/post-images/1657020083503.jpg" alt="" loading="lazy"><br>
+硬盘分区完成之后就可以正式装系统了。</p>
+<p>总结：传统BIOS（Legacy）对应的是MBR，系统引导文件和系统在一个分区。</p>
+<p>UEFI对应的是GPT（GUID），系统引导文件在ESP分区。</p>
+<p>开启CMS兼容模式都可以。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[（系统安装系列2）把U盘制作成PE系统启动U盘的方法]]></title>
+        <id>https://www.dddy.eu.org/post/2/</id>
+        <link href="https://www.dddy.eu.org/post/2/">
+        </link>
+        <updated>2022-06-13T11:46:40.000Z</updated>
+        <content type="html"><![CDATA[<p>把PE系统装进U盘可以有很多实用的功能，U盘既可以当做存储文件的工具使用，又可以开机进入U盘里的PE系统维护电脑使用，PE系统启动U盘最常用的功能就是用来装系统，可以装原版也可以装各种ghost版本。</p>
+<p>Windows PE系统是一种系统预装环境和工具。现在主要有2003pe、win7pe、win8pe、win10pe，一般一个制作工具里都会集成两个或两个以上，以适应不用硬件的需求，PE其实就是一个精简版的Windows系统，只保留了最基本的功能并添加了一些实用的工具，例如可以给系统备份，在忘记Windows登录密码时可以进入PE系统清除Windows密码，给硬盘分区，系统坏了没法进入系统时可以进入PE里把放在桌面的重要文件导出来，还能够检测硬件信息等等。</p>
+<p>好多人不喜欢用U盘PE来装系统，是因为有些U盘PE制作工具会偷偷的给电脑安装一些并不需要的软件，更改甚至锁定IE主页等行为，这里推荐两个比较好的制作工具，微PE工具箱和IT天空的优启通，微PE是目前大家公认的最干净的制作工具，没捆绑，不改主页。优启通虽然有推广软件和更改主页，但可以关掉，即使不小心更改了主页也不锁定，之后可以自己按需要更改，而且官网论坛很活跃，有问题可以去论坛交流。</p>
+<p>首先要准备一个8G以上的U盘，一般还要放几个系统，越大越好。制作前U盘里不要放重要的文件，制作时U盘会被格式化。</p>
+<p>微PE的下载和使用：百度搜索“微pe工具箱”，找到下图这个，一定要注意网址对不对，现在有好多假冒的。</p>
+<p>微PE工具箱的网址是：http://www.wepe.com.cn<br>
+<img src="https://www.dddy.eu.org/post-images/1655120907176.jpg" alt="" loading="lazy"><br>
+进到网站里面下载最新的版本即可，如果当前用的电脑是32位的系统就下载32位的，64位的就下载64位的，下载后可以直接打开（不需要安装），选择“安装PE到U盘选项”。<br>
+<img src="https://www.dddy.eu.org/post-images/1655120933162.jpg" alt="" loading="lazy"><br>
+安装方法一般默认即可。</p>
+<p>待写入U盘显示的是已经插在电脑上的U盘，如果电脑插了两个以上的U盘，可以选择需要制作的那个，如果什么显示都没有，就点一下右边那个刷新按钮。</p>
+<p>格式化可以选择exFAT或NTFS，这两种文件格式都支持4G以上的大文件存储。</p>
+<p>卷标随意，这个即使制作好之后也可以随意改。</p>
+<p>壁纸可以自己设定，如果不改就会显示默认壁纸。</p>
+<p>下面的（仅legacy启动可用）说的是只有传统BIOS启动方式才可以用，新的uefi启动不能用，现在大多数新电脑默认都是uefi启动，如果不需要DOS工具箱还是不勾选的好。</p>
+<p>所有选好之后点击“立即安装进U盘”，等待制作完成即可。<br>
+<img src="https://www.dddy.eu.org/post-images/1655120963627.jpg" alt="" loading="lazy"></p>
+<p>关于优启通可以直接百度搜索“IT天空”，找到IT天空官网，到里面下载最新版本。</p>
+<p>IT天空网址：https://www.itsk.com<br>
+<img src="https://www.dddy.eu.org/post-images/1655120987741.jpg" alt="" loading="lazy"><br>
+下载好之后也不用安装，可以直接打开，首先选择“U盘模式”，选择磁盘那里选择需要制作的U盘，其它都默认即可，壁纸也可以自己设定。之后点击“全新制作”就开始制作了。</p>
+<p>还原空间的作用是，制作好之后又不想用了，可以把U盘还原成原来的样子。</p>
+<p>免格升级的作用是，当优启通有新版本了，用这个选项可以直接升级，U盘不会被格式化，不影响里面存储的文件。<br>
+<img src="https://www.dddy.eu.org/post-images/1655121010885.jpg" alt="" loading="lazy"><br>
+制作好之后就可以把电脑BIOS里设置成U盘为第一启动项，或开机按选择启动盘的快捷键，选择U盘，这样开机就能进入到U盘里的PE系统了。不同品牌主板的快捷键都不一样，需要根据自己电脑或主板的品牌搜一下。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[（系统安装系列1）原版Windows系统（Win7、Win10、Win11等）下载的方法]]></title>
+        <id>https://www.dddy.eu.org/post/1/</id>
+        <link href="https://www.dddy.eu.org/post/1/">
+        </link>
+        <updated>2022-06-11T11:45:04.000Z</updated>
+        <content type="html"><![CDATA[<p>给电脑安装原版系统可能不是最方便的，但一定是最干净的，如果有足够的时间还是给电脑安装原版系统比较好，原版系统一般到“MSDN我告诉你”或微软官网去下载。</p>
+<p>如果下载win7系统，建议到“MSDN我告诉你”去下载，这个是大家公认的下载原版系统最好的地方，下载速度也比较快。百度搜“MSDN我告诉你”，找到官网，里面有各种版本的Windows系统、office软件等等好多原版资源。</p>
+<p>网址：https://msdn.itellyou.cn<br>
+<img src="https://www.dddy.eu.org/post-images/1654946231374.jpg" alt="" loading="lazy"><br>
+由于里面的内容过于丰富，而且大部分都是英文，新手很不好选出自己需要的东西，下面做一下简单的介绍。<br>
+Enterprise 企业版<br>
+home_basic 家庭版<br>
+home_premium家庭高级版<br>
+professional专业版<br>
+ultimate 旗舰版<br>
+Consumer editions包括：家庭版、家庭单语言版、教育版、专业版、专业教育版、专业工作站版<br>
+Business editions包括：企业版、教育版、专业版<br>
+特别说明一下，里面有一个Windows 10 Enterprise LTSC 2019，这个可以说是微软官方的Win10精简版，这个版本只会更新补丁，不会强制升级新版本，如果不想系统总是自动升级版本而带来很多未知的问题，装Win10选这个就没错了。<br>
+找到需要的系统版本，复制下载链接用迅雷下载即可，一般电脑内存小于4G用32位系统，大于等于4G用64位系统。<br>
+下面整理几个常用的链接，都是来源于“MSDN，我告诉你”，把下载地址复制到迅雷即可下载，大文件传输的过程中有出错的可能，下载完成后最好校验一下哈希值（SHA1），确认无误后再使用。<br>
+分享一个文件校验工具：https://www.123pan.com/s/wnv9-qGTod<br>
+Win7旗舰版简体中文32位系统：<br>
+文件名：cn_windows_7_ultimate_with_sp1_x86_dvd_u_677486.iso<br>
+SHA1：B92119F5B732ECE1C0850EDA30134536E18CCCE7<br>
+文件大小：2.47GB<br>
+发布时间：2011-05-12<br>
+下载地址：<br>
+ed2k://|file|cn_windows_7_ultimate_with_sp1_x86_dvd_u_677486.iso|2653276160|7503E4B9B8738DFCB95872445C72AEFB|/</p>
+<p>Win7旗舰版简体中文64位系统：<br>
+文件名：cn_windows_7_ultimate_with_sp1_x64_dvd_u_677408.iso<br>
+SHA1：2CE0B2DB34D76ED3F697CE148CB7594432405E23<br>
+文件大小：3.19GB<br>
+发布时间：2011-05-12<br>
+下载地址：<br>
+ed2k://|file|cn_windows_7_ultimate_with_sp1_x64_dvd_u_677408.iso|3420557312|B58548681854236C7939003B583A8078|/</p>
+<p>Win10 LTSC 2019长期服务版32位系统：<br>
+文件名：cn_windows_10_enterprise_ltsc_2019_x86_dvd_1814dbab.iso<br>
+SHA1：ba2169edd94f123211cd4aaca68352f1ab6195d9<br>
+文件大小：2.98GB<br>
+发布时间：2019-03-15<br>
+下载地址：<br>
+ed2k://|file|cn_windows_10_enterprise_ltsc_2019_x86_dvd_1814dbab.iso|3196803072|2D39C54A2E99BAC308191C74A15B3237|/</p>
+<p>Win10 LTSC 2019长期服务版64位系统：<br>
+文件名：cn_windows_10_enterprise_ltsc_2019_x64_dvd_9c09ff24.iso<br>
+SHA1：24b59706d5eded392423936c82ba5a83596b50cc<br>
+文件大小：4.17GB<br>
+发布时间：2019-03-15<br>
+下载地址：<br>
+ed2k://|file|cn_windows_10_enterprise_ltsc_2019_x64_dvd_9c09ff24.iso|4478906368|E7C526499308841A4A6D116C857DB669|/</p>
+<p>如果想要安装最新版的Win10、Win11系统可以到微软官网去下载，使用微软官方下载工具下载，唯一的缺点就是下载有点慢。<br>
+第一步：上百度搜“Win10系统下载”，找到带有microsoft.字样的官方网站，一般在搜索结果的第一页就能找到，或直接输入下面网址。<br>
+微软官网Win10下载网址：https://www.microsoft.com/zh-cn/software-download/windows10<br>
+微软官网Win11下载网址：https://www.microsoft.com/zh-cn/software-download/windows11<br>
+<img src="https://www.dddy.eu.org/post-images/1654946275569.jpg" alt="" loading="lazy"><br>
+第二步：点击“立即下载工具”，先把工具下载到电脑。<br>
+<img src="https://www.dddy.eu.org/post-images/1654946331225.jpg" alt="" loading="lazy"><br>
+第三步：打开下载工具，选择“为另一台电脑创建安装介质”。<br>
+<img src="https://www.dddy.eu.org/post-images/1654946365988.jpg" alt="" loading="lazy"><br>
+第四步，按需要选择，一般4G以下内存的电脑选32位系统，4G以上内存的电脑选64位系统。如果整整4G的内存电脑那就先装64位的试试，毕竟现在好多新版本软件都不支持32位系统了，如果系统反应太慢就再换成32位的，装老版本的软件。<br>
+<img src="https://www.dddy.eu.org/post-images/1654946394937.jpg" alt="" loading="lazy"><br>
+第五步，如果需要用U盘直接安装就选择U盘，需要把U盘提前插到电脑上，需提前备份U盘里的文件，U盘会被格式化。如果需要刻录到光盘或是用U盘PE安装就选择ISO文件，这里建议选择ISO文件，把系统直接下载到电脑上，需要的时候再复制到U盘，因为如果这时候把系统放到U盘里，以后这个U盘基本上也就只能装系统用了，里面有很多文件都在U盘根目录，不能移动位置，移动了就不能用了，再放其它文件会显得很乱，而且U盘会被格式化成fat32格式，就不能放4G以上的大文件了，除非重新格式化。当然如果U盘以后只装系统用也无所谓。<br>
+<img src="https://www.dddy.eu.org/post-images/1654946426620.jpg" alt="" loading="lazy"><br>
+<img src="https://www.dddy.eu.org/post-images/1654946434467.jpg" alt="" loading="lazy"><br>
+下载完成后会得到一个后缀为iso的映像文件，这就是最新版的原版Win10系统了，具体的系统安装方法将在以后的文章中介绍。</p>
+]]></content>
+    </entry>
+</feed>
